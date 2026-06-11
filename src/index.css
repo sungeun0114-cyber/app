@@ -424,7 +424,7 @@ body {
 }
 
 .center-button:active { transform: translate(-50%, -50%) scale(.96); }
-.center-button .pixel-character { opacity: .5; }
+.center-button .pixel-character { opacity: .5; transform: translate(-2px, 2px); }
 
 .calendar-screen { padding-inline: 12px; }
 .calendar-title { display: flex; align-items: baseline; justify-content: space-between; margin: 8px 1px 6px; }
