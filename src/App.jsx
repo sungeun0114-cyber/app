@@ -62,7 +62,7 @@ function App() {
   const [selectedDate, setSelectedDate] = useState('2026-06-12')
   const [note, setNote] = useState('')
   const [saved, setSaved] = useState(false)
-  const [roomMessage, setRoomMessage] = useState('원숭이가 방을 산책하고 있어')
+  const [roomMessage, setRoomMessage] = useState('조숭이가 방을 산책하고 있어')
   const [petReaction, setPetReaction] = useState(false)
   const [hunger, setHunger] = useState(68)
   const [feedingOpen, setFeedingOpen] = useState(false)
@@ -132,7 +132,7 @@ function App() {
 
   const reactToPet = () => {
     setPetReaction(true)
-    setRoomMessage('원숭이: 헤헤, 나 불렀어?')
+    setRoomMessage('조숭이: 헤헤, 나 불렀어?')
     window.setTimeout(() => setPetReaction(false), 650)
   }
 
@@ -140,7 +140,7 @@ function App() {
     setHunger((current) => Math.min(100, current + food.fill))
     setPetReaction(true)
     setFeedingOpen(false)
-    setRoomMessage(`원숭이가 ${food.name}을(를) 냠냠 먹었어!`)
+    setRoomMessage(`조숭이가 ${food.name}을(를) 냠냠 먹었어!`)
     window.setTimeout(() => setPetReaction(false), 650)
   }
 
@@ -155,7 +155,7 @@ function App() {
     setGameScore(nextScore)
     setTargetPosition((current) => (current + 3) % 6)
     if (nextScore >= 5) {
-      setRoomMessage('게임 성공! 원숭이가 신이 났어!')
+      setRoomMessage('게임 성공! 조숭이가 신이 났어!')
       window.setTimeout(() => setView('room'), 500)
     }
   }
@@ -168,21 +168,21 @@ function App() {
     if (view === 'game') {
       return (
         <div className="screen-content game-screen">
-          <div className="screen-topline"><span>MONKEY POP</span><span>{gameScore} / 5</span></div>
+          <div className="screen-topline"><span>JOSUNGI POP</span><span>{gameScore} / 5</span></div>
           <div className="mole-field">
             {Array.from({ length: 6 }, (_, index) => (
               <button
                 key={index}
                 className={`mole-hole ${targetPosition === index ? 'is-up' : ''}`}
                 onClick={targetPosition === index ? catchMole : undefined}
-                aria-label={targetPosition === index ? '나온 원숭이 잡기' : `빈 구멍 ${index + 1}`}
+                aria-label={targetPosition === index ? '나온 조숭이 잡기' : `빈 구멍 ${index + 1}`}
               >
                 {targetPosition === index && <PixelCharacter emotionId="excited" className="mole-pet" />}
                 <span className="hole-ground" />
               </button>
             ))}
           </div>
-          <p><b>나온 원숭이를 5번 탭!</b><span>빨리 잡아봐!</span></p>
+          <p><b>나온 조숭이를 5번 탭!</b><span>빨리 잡아봐!</span></p>
           <button className="game-exit" onClick={() => setView('room')}>그만 놀기</button>
         </div>
       )
@@ -191,12 +191,12 @@ function App() {
     if (view === 'room') {
       return (
         <div className="screen-content room-screen">
-          <div className="screen-topline"><span>MONKEY'S ROOM</span><span>12:48</span></div>
+          <div className="screen-topline"><span>JOSUNGI'S ROOM</span><span>12:48</span></div>
           <div className="pixel-room">
             <button
               className={`roaming-pet ${petReaction ? 'is-reacting' : ''}`}
               onClick={reactToPet}
-              aria-label="원숭이 쓰다듬기"
+              aria-label="조숭이 쓰다듬기"
             >
               <span className="reaction-mark">{petReaction ? '♥' : '!'}</span>
               <PixelCharacter emotionId={petReaction ? 'happy' : 'calm'} />
@@ -279,7 +279,7 @@ function App() {
           <div className="screen-topline"><span>TRANSLATED</span><span>12:48</span></div>
           <div className="result-heading">
             <PixelCharacter emotionId={selected.id} className="result-character" />
-            <div><small>원숭이의 번역</small><h2>{selected.short}</h2></div>
+            <div><small>조숭이의 번역</small><h2>{selected.short}</h2></div>
           </div>
           <p className="translation">“{selected.message}”</p>
           <div className="tiny-action"><b>TODAY</b>{selected.action}</div>
@@ -298,12 +298,12 @@ function App() {
 
     return (
       <div className="screen-content home-screen">
-        <div className="screen-topline"><span>MONKEY MOOD</span><span>12:48</span></div>
+        <div className="screen-topline"><span>JOSUNGI MOOD</span><span>12:48</span></div>
         <div className="date-chip">JUN 12 · FRI</div>
-        <div className="home-character-button" aria-label="원숭이">
+        <div className="home-character-button" aria-label="조숭이">
           <PixelCharacter emotionId={records[todayKey]?.emotionId || 'happy'} className="hero-character home-pet" />
         </div>
-        <h1>원숭이와 같이<br />마음을 나눠보는 시간</h1>
+        <h1>조숭이와 같이<br />마음을 나눠보는 시간</h1>
         <p>오늘의 마음을 천천히 들려줘.</p>
         <button className="start-button" onClick={() => {
           setFeedingOpen(false)
@@ -319,7 +319,7 @@ function App() {
       <div className="ambient-character two"><PixelCharacter emotionId="loved" /></div>
       <section className="device" aria-label="몽키 무드 감정 번역기">
         <div className="device-label">
-          <span>monkey</span><b>mood</b>
+          <span>josungi</span><b>mood</b>
         </div>
         <div className="display">{screen}</div>
 
