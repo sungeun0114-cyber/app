@@ -180,8 +180,7 @@ body {
 
 .hero-character.small {
   width: 112px;
-  margin-top: 0;
-  margin-bottom: -7px;
+  margin: 0;
 }
 
 .emotion-wheel-control {
@@ -189,7 +188,8 @@ body {
   grid-template-columns: 42px 112px 42px;
   align-items: center;
   justify-content: center;
-  margin: -2px auto -7px;
+  height: 92px;
+  margin: 4px auto 0;
 }
 .emotion-wheel-control .hero-character.small { margin: 0; }
 .emotion-wheel-control button {
@@ -250,13 +250,15 @@ body {
 }
 
 .pick-screen h2 {
-  display: inline-block;
-  margin: -1px 0 0;
+  display: block;
+  height: 24px;
+  margin: 10px 0 0;
   padding: 0;
   border: 0;
   background: transparent;
   font-family: inherit;
   font-size: 20px;
+  line-height: 24px;
   letter-spacing: -.05em;
 }
 
@@ -264,7 +266,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 4px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .emotion-dots button {
