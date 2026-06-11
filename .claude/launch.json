@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "map-diary",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "island",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/Users/seong-eun/Desktop/my-map-diary/server.js"],
+      "port": 8090
+    }
+  ]
+}

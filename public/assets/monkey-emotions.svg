@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" shape-rendering="crispEdges">
+  <defs>
+    <g id="monkey">
+      <path d="M46 109H24V76H35V61H52V48H72V39H128V48H148V61H165V76H176V109H154V137H137V157H118V174H82V157H63V137H46Z" fill="#a95d20" stroke="#21160f" stroke-width="8"/>
+      <path d="M31 79H57V118H31ZM143 79H169V118H143Z" fill="#e8b46d" stroke="#21160f" stroke-width="8"/>
+      <path d="M60 64H140V126H130V143H70V126H60Z" fill="#f8dfaa" stroke="#21160f" stroke-width="8"/>
+      <path d="M76 145H124V180H76Z" fill="#a95d20" stroke="#21160f" stroke-width="8"/>
+      <path d="M85 151H115V171H85Z" fill="#f8dfaa"/>
+      <path d="M128 145H153V158H173V145H184V173H164V181H145V169H128Z" fill="#a95d20" stroke="#21160f" stroke-width="8"/>
+      <path d="M89 33H99V18H112V40" fill="#a95d20" stroke="#21160f" stroke-width="8"/>
+    </g>
+  </defs>
+  <g transform="translate(0 0)"><use href="#monkey"/><rect x="78" y="88" width="10" height="10" fill="#21160f"/><rect x="112" y="88" width="10" height="10" fill="#21160f"/><path d="M83 111H92V120H108V111H117V129H83Z" fill="#21160f"/></g>
+  <g transform="translate(200 0)"><use href="#monkey"/><path d="M75 93H91M109 93H125" stroke="#21160f" stroke-width="7"/><path d="M88 116H112" stroke="#21160f" stroke-width="7"/></g>
+  <g transform="translate(400 0)"><use href="#monkey"/><rect x="77" y="84" width="11" height="17" fill="#21160f"/><rect x="112" y="84" width="11" height="17" fill="#21160f"/><rect x="91" y="111" width="18" height="20" fill="#21160f"/><path d="M60 35V18M140 35V18" stroke="#21160f" stroke-width="7"/></g>
+  <g transform="translate(600 0)"><use href="#monkey"/><path d="M76 85H90V99H76ZM110 85H124V99H110Z" fill="#d94a61"/><path d="M100 128L82 111V101H94L100 108L106 101H118V111Z" fill="#d94a61"/><path d="M159 42L170 31H181V42L170 54Z" fill="#d94a61"/></g>
+  <g transform="translate(0 200)"><use href="#monkey"/><path d="M76 99L85 90L94 99M106 99L115 90L124 99" fill="none" stroke="#21160f" stroke-width="7"/><path d="M84 127Q100 110 116 127" fill="none" stroke="#21160f" stroke-width="7"/><rect x="126" y="105" width="7" height="16" fill="#64a9db"/></g>
+  <g transform="translate(200 200)"><use href="#monkey"/><path d="M72 84L93 94M128 84L107 94" stroke="#21160f" stroke-width="8"/><rect x="79" y="96" width="10" height="10" fill="#21160f"/><rect x="111" y="96" width="10" height="10" fill="#21160f"/><path d="M84 130Q100 111 116 130" fill="none" stroke="#21160f" stroke-width="7"/><path d="M54 37H68M132 37H146" stroke="#d94a3d" stroke-width="7"/></g>
+  <g transform="translate(400 200)"><use href="#monkey"/><rect x="77" y="91" width="8" height="13" fill="#21160f"/><rect x="115" y="91" width="8" height="13" fill="#21160f"/><path d="M85 124L93 116L100 124L107 116L115 124" fill="none" stroke="#21160f" stroke-width="6"/><path d="M55 52L47 42M145 52L153 42" stroke="#7050b5" stroke-width="6"/></g>
+  <g transform="translate(600 200)"><use href="#monkey"/><path d="M75 96H91M109 96H125" stroke="#21160f" stroke-width="7"/><rect x="95" y="120" width="10" height="7" fill="#21160f"/><text x="143" y="65" font-family="monospace" font-size="35" font-weight="bold" fill="#21160f">Z</text></g>
+  <g transform="translate(0 400)"><use href="#monkey"/><rect x="79" y="88" width="9" height="12" fill="#21160f"/><rect x="113" y="88" width="9" height="12" fill="#21160f"/><path d="M92 116H108V130H100" fill="none" stroke="#21160f" stroke-width="7"/><text x="48" y="62" font-family="monospace" font-size="32" font-weight="bold" fill="#21160f">?</text></g>
+  <g transform="translate(200 400)"><use href="#monkey"/><path d="M76 96L84 88L92 96M108 96L116 88L124 96" fill="none" stroke="#21160f" stroke-width="7"/><path d="M84 112H116V126H84Z" fill="#21160f"/><path d="M62 34H76V20M138 34H124V20" stroke="#e3af26" stroke-width="7"/></g>
+  <g transform="translate(400 400)"><use href="#monkey"/><rect x="81" y="91" width="8" height="12" fill="#21160f"/><rect x="111" y="91" width="8" height="12" fill="#21160f"/><path d="M86 127Q100 115 114 127" fill="none" stroke="#21160f" stroke-width="6"/><path d="M151 54H166V69H151Z" fill="#7c8da6"/></g>
+  <g transform="translate(600 400)"><use href="#monkey"/><path d="M76 96L84 88L92 96M108 96L116 88L124 96" fill="none" stroke="#21160f" stroke-width="7"/><path d="M86 112Q100 127 114 112" fill="none" stroke="#21160f" stroke-width="7"/><path d="M151 56H160V47H169V56H178V65H169V74H160V65H151Z" fill="#7fcbb3"/></g>
+</svg>
