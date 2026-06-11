@@ -336,9 +336,15 @@ body {
   font-size: 8px;
 }
 
+.chip-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
 .save-chip {
   display: block;
-  margin: 4px auto 0;
   padding: 2px 7px;
   border: 0;
   background: #111;
@@ -346,6 +352,12 @@ body {
   font-family: inherit;
   font-size: 7px;
   cursor: pointer;
+}
+
+.delete-chip {
+  background: #fff;
+  color: #c0392b;
+  border: 1px solid #c0392b;
 }
 
 .save-chip.saved { background: #5e7317; }

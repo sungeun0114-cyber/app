@@ -156,6 +156,17 @@ function App() {
     setView('calendar')
   }
 
+  const deleteEntry = () => {
+    setRecords((current) => {
+      const next = { ...current }
+      delete next[selectedDate]
+      return next
+    })
+    setNote('')
+    setSaved(false)
+    setView('calendar')
+  }
+
   const chooseCalendarDate = (dateKey) => {
     setSelectedDate(dateKey)
     const record = records[dateKey]
@@ -329,9 +340,16 @@ function App() {
             placeholder="왜 이런 기분이 들었을까?"
             maxLength={50}
           />
-          <button className="save-chip" onClick={saveEntry}>
-            감정과 메모 저장하기
-          </button>
+          <div className="chip-row">
+            <button className="save-chip" onClick={saveEntry}>
+              감정과 메모 저장하기
+            </button>
+            {records[selectedDate] && (
+              <button className="save-chip delete-chip" onClick={deleteEntry}>
+                기록 삭제
+              </button>
+            )}
+          </div>
         </div>
       )
     }
