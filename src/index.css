@@ -191,7 +191,7 @@ body {
   height: 92px;
   margin: 4px auto 0;
 }
-.emotion-wheel-control .hero-character.small { margin: 0; }
+.emotion-wheel-control .hero-character.small { margin: 0; transform: translateX(-3px); }
 .emotion-wheel-control button {
   display: grid;
   width: 34px;
@@ -389,28 +389,14 @@ body {
   grid-template-columns: repeat(3, 4px);
   grid-auto-rows: 3px;
   gap: 2px;
-  margin: 3px auto 0;
+  margin: auto;
   padding: 6px 1px 2px;
   justify-content: center;
   border: 2px solid currentColor;
   border-radius: 3px;
   box-shadow: inset 0 4px currentColor;
 }
-.pixel-calendar::before,
-.pixel-calendar::after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  width: 2px;
-  height: 5px;
-  background: currentColor;
-}
-.pixel-calendar::before { left: 4px; }
-.pixel-calendar::after { right: 4px; }
 .pixel-calendar i { background: currentColor; }
-.pixel-calendar i:nth-child(5) { background: #ff5d8f; }
-.wheel-button.menu:active .pixel-calendar i:nth-child(5),
-.wheel-button.menu:hover .pixel-calendar i:nth-child(5) { background: #ff5d8f; }
 
 .center-button {
   inset: 50%;

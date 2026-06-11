@@ -341,7 +341,7 @@ function App() {
         <div className="screen-topline"><span>JOSUNGI MOOD</span><span>{clock}</span></div>
         <div className="date-chip">JUN 12 · FRI</div>
         <div className="home-character-button" aria-label="조숭이">
-          <PixelCharacter emotionId={records[todayKey]?.emotionId || 'happy'} className="hero-character home-pet" />
+          <PixelCharacter emotionId="happy" className="hero-character home-pet" />
         </div>
         <h1>조숭이와 같이<br />마음을 나눠보는 시간</h1>
         <p>오늘의 마음을 천천히 들려줘.</p>
