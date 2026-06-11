@@ -438,7 +438,7 @@ body {
 
 .pixel-room {
   position: relative;
-  height: clamp(150px, calc(92vw - 168px), 192px);
+  height: clamp(130px, calc(92vw - 200px), 192px);
   margin-top: 6px;
   overflow: hidden;
   border: 3px solid #292323;
@@ -740,7 +740,7 @@ body {
 .game-screen { padding: 10px 12px; text-align: center; background: #f8f1e5; }
 .mole-field {
   display: grid;
-  height: clamp(160px, calc(92vw - 155px), 210px);
+  height: clamp(140px, calc(92vw - 195px), 210px);
   margin-top: 7px;
   padding: 20px 17px 10px;
   grid-template-columns: repeat(3, 1fr);
