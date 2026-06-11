@@ -56,6 +56,32 @@ function PixelCharacter({ emotionId = 'happy', className = '' }) {
   )
 }
 
+let audioCtx = null
+const playBeeps = (notes) => {
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)()
+    if (audioCtx.state === 'suspended') audioCtx.resume()
+    const now = audioCtx.currentTime
+    notes.forEach(([freq, start, length]) => {
+      const osc = audioCtx.createOscillator()
+      const gain = audioCtx.createGain()
+      osc.type = 'square'
+      osc.frequency.value = freq
+      gain.gain.setValueAtTime(0.0001, now + start)
+      gain.gain.exponentialRampToValueAtTime(0.08, now + start + 0.01)
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + start + length)
+      osc.connect(gain)
+      gain.connect(audioCtx.destination)
+      osc.start(now + start)
+      osc.stop(now + start + length + 0.02)
+    })
+  } catch { /* 사운드 미지원 환경에서는 조용히 무시 */ }
+}
+
+const popSound = () => playBeeps([[660, 0, 0.07], [880, 0.07, 0.09]])
+const catchSound = () => playBeeps([[523, 0, 0.06], [659, 0.06, 0.06], [784, 0.12, 0.06], [1047, 0.18, 0.12]])
+const winSound = () => playBeeps([[523, 0, 0.1], [659, 0.1, 0.1], [784, 0.2, 0.1], [1047, 0.3, 0.22], [784, 0.3, 0.22]])
+
 function App() {
   const [view, setView] = useState('home')
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -89,6 +115,7 @@ function App() {
     if (view !== 'game') return undefined
     const timer = window.setInterval(() => {
       setTargetPosition((current) => (current + 1 + Math.floor(Math.random() * 5)) % 6)
+      popSound()
     }, 850)
     return () => window.clearInterval(timer)
   }, [view])
@@ -127,7 +154,7 @@ function App() {
     }
     setSaved(false)
     setNote(record?.note || '')
-    setView('pick')
+    setView(record ? 'result' : 'pick')
   }
 
   const reactToPet = () => {
@@ -155,8 +182,11 @@ function App() {
     setGameScore(nextScore)
     setTargetPosition((current) => (current + 3) % 6)
     if (nextScore >= 5) {
+      winSound()
       setRoomMessage('게임 성공! 조숭이가 신이 났어!')
       window.setTimeout(() => setView('room'), 500)
+    } else {
+      catchSound()
     }
   }
 
