@@ -56,6 +56,10 @@ function PixelCharacter({ emotionId = 'happy', className = '' }) {
   )
 }
 
+const formatClock = () => new Date().toLocaleTimeString('ko-KR', {
+  timeZone: 'Asia/Seoul', hour: '2-digit', minute: '2-digit', hour12: false,
+})
+
 let audioCtx = null
 const playBeeps = (notes) => {
   try {
@@ -94,6 +98,7 @@ function App() {
   const [feedingOpen, setFeedingOpen] = useState(false)
   const [gameScore, setGameScore] = useState(0)
   const [targetPosition, setTargetPosition] = useState(0)
+  const [clock, setClock] = useState(formatClock)
   const [records, setRecords] = useState(() => {
     try {
       const stored = localStorage.getItem('monkey-emotion-records')
@@ -110,6 +115,11 @@ function App() {
   useEffect(() => {
     localStorage.setItem('monkey-emotion-records', JSON.stringify(records))
   }, [records])
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setClock(formatClock()), 15000)
+    return () => window.clearInterval(timer)
+  }, [])
 
   useEffect(() => {
     if (view !== 'game') return undefined
@@ -221,7 +231,7 @@ function App() {
     if (view === 'room') {
       return (
         <div className="screen-content room-screen">
-          <div className="screen-topline"><span>JOSUNGI'S ROOM</span><span>12:48</span></div>
+          <div className="screen-topline"><span>JOSUNGI'S ROOM</span><span>{clock}</span></div>
           <div className="pixel-room">
             <button
               className={`roaming-pet ${petReaction ? 'is-reacting' : ''}`}
@@ -277,7 +287,7 @@ function App() {
     if (view === 'pick') {
       return (
         <div className="screen-content pick-screen">
-          <div className="screen-topline"><span>HOW R U?</span><span>12:48</span></div>
+          <div className="screen-topline"><span>HOW R U?</span><span>{clock}</span></div>
           <p className="step-label">{formatDate(selectedDate)}의 마음은</p>
           <div className="emotion-wheel-control">
             <button onClick={() => moveSelection(-1)} aria-label="이전 감정">◀</button>
@@ -306,7 +316,7 @@ function App() {
     if (view === 'result') {
       return (
         <div className="screen-content result-screen">
-          <div className="screen-topline"><span>TRANSLATED</span><span>12:48</span></div>
+          <div className="screen-topline"><span>TRANSLATED</span><span>{clock}</span></div>
           <div className="result-heading">
             <PixelCharacter emotionId={selected.id} className="result-character" />
             <div><small>조숭이의 번역</small><h2>{selected.short}</h2></div>
@@ -328,7 +338,7 @@ function App() {
 
     return (
       <div className="screen-content home-screen">
-        <div className="screen-topline"><span>JOSUNGI MOOD</span><span>12:48</span></div>
+        <div className="screen-topline"><span>JOSUNGI MOOD</span><span>{clock}</span></div>
         <div className="date-chip">JUN 12 · FRI</div>
         <div className="home-character-button" aria-label="조숭이">
           <PixelCharacter emotionId={records[todayKey]?.emotionId || 'happy'} className="hero-character home-pet" />
